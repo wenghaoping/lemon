@@ -1,17 +1,11 @@
-# lemon
-
 # 快速开始
-
-## 介绍
-
-极大的简化了 css 的写法,以后再也不用写 css 啦.只写 class 啦
 
 ## 安装
 
 通过 yarn 安装
 
 ```bash
-yarn add @minij/lemon
+yarn add @minij/lemon --registry https://registry.npmjs.org
 ```
 
 ## 使用

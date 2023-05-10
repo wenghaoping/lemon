@@ -1,0 +1,34 @@
+@import '../global.less';
+
+/**
+ * title: 字体颜色
+ * type: fontColors
+ */
+each(@font-colors, {
+    .@{key} {
+        color: var(@value)!important;
+    }
+})
+.transparent {
+    color: transparent!important;
+}
+
+/**
+ * title: 背景颜色
+ * type: backgroundColors
+ */
+each(@bg-colors, {
+    .bg-@{key} {
+        background-color: var(@value)!important;
+    }
+})
+
+/**
+ * title: 边框颜色
+ * type: borderColors
+ */
+each(@border-colors, {
+    .border-color-@{key} {
+        border-color: var(@value)!important;
+    }
+})

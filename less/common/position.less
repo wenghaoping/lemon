@@ -1,0 +1,89 @@
+@import '../global.less';
+
+/**
+ * title: 定位类型
+ * type: positionType
+ */
+@position-list: static, relative, absolute, fixed, sticky;
+each(@position-list, {
+    .@{value} {
+        position: @value!important;
+    }
+})
+
+/**
+ * title: 定位距离
+ * type: positionDistance
+ */
+@direction-list: {
+    t: top;
+    r: right;
+    b: bottom;
+    l: left;
+}
+each(@direction-list, {
+    @name-0: @{key}-0;
+    @name-auto: @{key}-auto;
+    .@{name-0} {
+        @{value}: 0!important;
+    }
+    .@{name-auto} {
+        @{value}: auto!important;
+    }
+})
+
+.lt-0 {
+    &:extend(.l-0, .t-0);
+}
+.lb-0 {
+    &:extend(.l-0, .b-0);
+}
+.rt-0 {
+    &:extend(.r-0, .t-0);
+}
+.rb-0 {
+    &:extend(.r-0, .b-0);
+}
+.lr-0 {
+    &:extend(.l-0, .r-0);
+}
+.tb {
+    &:extend(.t-0, .b-0);
+}
+.cover-0 {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+/**
+ * title: 定位层级
+ * type: zIndex
+ */
+@z-index-list: range(10, 90, 10);
+each(@z-index-list, {
+    .z-index-@{value} {
+        z-index: @value;
+    }
+})
+.z-index-1 {
+    z-index: 1;
+}
+.z-index-99 {
+    z-index: 99;
+}
+
+/**
+ * title: 特殊定位
+ * type: positionSpecial
+ */
+.absolute-center {
+    .absolute(@top: 50%, @left: 50%);
+    transform: translate(-50%, -50%);
+}
+.cover {
+    position: fixed;
+    .cover-0;
+}

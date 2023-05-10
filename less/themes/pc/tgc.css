@@ -1,0 +1,17 @@
+:root {
+    --primary: #FFC61A;
+    --primary-press: #e6ac00; 
+    --primary-hover: #ffd452; 
+
+    --text-selected: var(--text-title);
+    --primary-hover-text: var(--primary-press);
+
+    --primary-light-hover: #ffebaf; 
+    --primary-bg: #fffaeb; 
+
+    --button-dash-color: var(--text-title);  /* button 按钮此些颜色, 在弹个车模式下全是黑色 */
+    --button-text-hover: var(--text-title); 
+    --button-text-press: var(--text-title);
+
+    --text-anti: var(--text-title);
+}

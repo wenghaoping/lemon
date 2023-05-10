@@ -1,0 +1,301 @@
+.border (@color: var(--line), @radius: 0, @bgColor: transparent) {
+    position: relative;
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid @color;
+        background: @bgColor;
+        transform-origin: 0 0;
+        border-radius: @radius;
+        @media (-webkit-min-device-pixel-ratio: 1.5) {
+            width: 150%;
+            height: 150%;
+            transform: scale(0.66666);
+            border-radius: @radius * 1.5;
+        }
+        @media (-webkit-min-device-pixel-ratio: 2) {
+            width: 200%;
+            height: 200%;
+            transform: scale(0.5);
+            border-radius: @radius * 2;
+        }
+        @media (-webkit-min-device-pixel-ratio: 3) {
+            width: 300%;
+            height: 300%;
+            transform: scale(0.33333);
+            border-radius: @radius * 3;
+        }
+    }
+}
+
+.border-bottom (@color: var(--line)) {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: @color;
+        transform-origin: 0 bottom;
+        @media (-webkit-min-device-pixel-ratio: 1.5) {
+            transform: scaleY(0.6666);
+        }
+        @media (-webkit-min-device-pixel-ratio:2) {
+            transform: scaleY(0.5);
+        }
+        @media (-webkit-min-device-pixel-ratio:3) {
+            transform: scaleY(0.3333);
+        }
+    }
+}
+
+.border-top (@color: var(--line)) {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: @color;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        @media (-webkit-min-device-pixel-ratio: 1.5) {
+            transform: scaleY(0.6666);
+        }
+        @media (-webkit-min-device-pixel-ratio:2) {
+            transform: scaleY(0.5);
+        }
+        @media (-webkit-min-device-pixel-ratio:3) {
+            transform: scaleY(0.3333);
+        }
+    }
+}
+
+.border-left (@color: var(--line)) {
+    position: relative;
+    &:after {
+        content: '';
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: @color;
+        transform-origin: 0 0;
+        @media (-webkit-min-device-pixel-ratio: 1.5) {
+            transform: scaleX(0.66666);
+        }
+        @media (-webkit-min-device-pixel-ratio: 2) {
+            transform: scaleX(0.5);
+        }
+        @media (-webkit-min-device-pixel-ratio: 3) {
+            transform: scaleX(0.33333);
+        }
+    }
+}
+
+.border-right (@color: var(--line)) {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: @color;
+        top: 0;
+        right: 0;
+        transform-origin: right 0;
+        @media (-webkit-min-device-pixel-ratio: 1.5) {
+            transform: scaleX(0.66666);
+        }
+        @media (-webkit-min-device-pixel-ratio: 2) {
+            transform: scaleX(0.5);
+        }
+        @media (-webkit-min-device-pixel-ratio: 3) {
+            transform: scaleX(0.33333);
+        }
+    }
+}
+
+.clear-fix () {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+.ellipsis (@max-width: 100%) {
+    max-width: @max-width;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.line-ellipsis (@num: 3, @max-width: 100%) {
+    max-width: @max-width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @num;
+    -webkit-box-orient: vertical;
+}
+
+.size(@width, @height: @width) {
+    width: @width;
+    height: @height;
+}
+
+.gradient-x(@start-color: #fff, @end-color: #1a1a1a, @start-percent: 0%, @end-percent: 100%) {
+    background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent);
+    background-repeat: repeat-x;
+}
+
+.gradient-y(@start-color: #fff, @end-color: #1a1a1a, @start-percent: 0%, @end-percent: 100%) {
+    background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent);
+    background-repeat: repeat-x;
+}
+
+.gradient-x-three(@start-color: #fff, @mid-color: #fff2bd, @mid-color-end: 50%, @end-color: var(--primary)) {
+    background-image: linear-gradient(to right, @start-color, @mid-color @mid-color-end, @end-color);
+    background-repeat: no-repeat;
+}
+.gradient-y-three(@start-color: #fff, @mid-color: #fff2bd, @mid-color-end: 50%, @end-color: var(--primary)) {
+    background-image: linear-gradient(@start-color, @mid-color @mid-color-end, @end-color);
+    background-repeat: no-repeat;
+}
+
+.gradient-directional(@start-color: #fff, @end-color: #666, @deg: 45deg) {
+    background-image: linear-gradient(@deg, @start-color, @end-color);
+    background-repeat: repeat-x;
+}
+
+.gradient-radial(@shape: circle,@inner-color: #fff, @outer-color: var(--primary)) {
+    background-image: radial-gradient(@shape, @inner-color, @outer-color);
+    background-repeat: no-repeat;
+}
+
+.arrow-down(@color: var(--line), @width: 10px, @height: 10px) {
+    width: @width;
+    height: @height;
+    border: @color solid;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.arrow-up(@color: var(--line), @width: 10px, @height: 10px) {
+    width: @width;
+    height: @height;
+    border: @color solid;
+    border-width: 1px 0 0 1px;
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.arrow-left(@color: var(--line), @width: 10px, @height: 10px) {
+    width: @width;
+    height: @height;
+    border: @color solid;
+    border-width: 0 0 1px 1px;
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.arrow-right(@color: var(--line), @width: 10px, @height: 10px) {
+    width: @width;
+    height: @height;
+    border: @color solid;
+    border-width: 1px 1px 0 0;
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.caret-down(@width:10px, @color: #999) {
+    border-top: @width solid @color;
+    border-right: @width solid transparent;
+    border-bottom: 0;
+    border-left: @width solid transparent;
+    width: 0;
+    height: 0;
+}
+.caret-up(@width:10px, @color: #999) {
+    border-top: 0;
+    border-right: @width solid transparent;
+    border-bottom: @width solid @color;
+    border-left: @width solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.caret-right(@width:10px, @color: #999) {
+    border-top: @width solid transparent;
+    border-bottom: @width solid transparent;
+    border-left: @width solid @color;
+    width: 0;
+    height: 0;
+}
+
+.caret-left(@width:10px, @color: #999) {
+    border-top: @width solid transparent;
+    border-right: @width solid @color;
+    border-bottom: @width solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.absolute(@top: auto, @right: auto, @bottom: auto, @left: auto) {
+    position: absolute;
+    top: @top;
+    right: @right;
+    left: @left;
+    bottom: @bottom;
+}
+
+.fixed(@top: auto, @right: auto, @bottom: auto, @left: auto) {
+    position: fixed;
+    top: @top;
+    right: @right;
+    left: @left;
+    bottom: @bottom;
+}
+
+.line-height(@height){
+    height: @height;
+    line-height: @height;
+}
+
+.circle(@width: 1px, @color: var(--line)) {
+    border: @width solid @color;
+    border-radius: 50%;
+}
+
+.mask(@opacity: .4, @zIndex: 10) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: @zIndex;
+    background: rgba(0, 0, 0, @opacity);
+}
+
+.icon-graph(@font-size, @content, @color) {
+    &::after {
+        content: @content;
+        font-size: @font-size;
+        color: @color;
+    }
+}
