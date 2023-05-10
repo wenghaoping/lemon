@@ -16,7 +16,7 @@ yarn add @minij/lemon
 
 ## 使用
 
-### 全量引入
+### 全量引入功能好
 
 ```js
 import "@minij/lemon"; // 引入全量工具类
