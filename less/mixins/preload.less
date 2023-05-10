@@ -1,0 +1,77 @@
+// 预加载图片使用的 mixins
+// 图片名需要前缀一致 assets/imgs/anim1 ~ assets/imgs/anim100
+.preload-imgs(@imgUrl, @start, @end) {
+  @suffixtmp: replace(@imgUrl, '.+?(?=\$1)', '');
+  @suffix: replace(@suffixtmp, '\$1', '');
+  @prefixtmp: replace(@imgUrl, '(?<=\$1).*$', '');
+  @prefix: replace(@prefixtmp, '\$1', '');
+  .loop-content(@start: 0, @end: 1, @prefix, @suffix) when (@start <= @end) {
+    content+_: url('@{prefix}@{start}@{suffix}');
+    .loop-content(@start + 1, @end, @prefix, @suffix);
+  }
+  &:before{
+    .loop-content(@start, @end, @prefix, @suffix);
+    width: 0;
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+  }
+}
+
+// // 单图帧动画 m -> 横向图片数，n -> 纵向图片数
+// .frameAnimSingle(@m, @n) {
+//   .circleBig(@m: 10, @n: 11, @i:0, @j:0) when (@i < @m) and (@j < @n) { // j、n 为个位数，i、m 为十位数
+//     @tmp1: @m * @n; // 宽高乘积
+//     @tmp2: @i * @m + @j; // 当前进度
+//     @x: round(@tmp2 / @tmp1 * 100, 2); // 进度
+//     @selector: e('@{x}%');
+//     @tmp3: @j * -100;
+//     @tmp4: @i * -100;
+//     @left: e('@{tmp3}%');
+//     @right: e('@{tmp4}%');
+//     @jPlus: @j + 1;
+//     @iPlus: @i + 1;
+
+//     @{selector} {
+//       background-position: @left @right;
+//     }
+
+//     & when (@jPlus >= @n) {
+//       .circleBig(@m, @n, @iPlus, 0);
+//     }
+
+//     & when (@jPlus < @n) {
+//       .circleBig(@m, @n, @i, @jPlus);
+//     }
+//   }
+
+//   .circleBig(@m, @n);
+// }
+
+// 多图帧动画 加载资源记得用预加载，否则动画第一遍播放会很卡顿
+.frameAnimMulti(@imgUrl, @start, @end) {
+    @suffixtmp: replace(@imgUrl, '.+?(?=\$1)', '');
+    @suffix: replace(@suffixtmp, '\$1', '');
+    @prefixtmp: replace(@imgUrl, '(?<=\$1).*$', '');
+    @prefix: replace(@prefixtmp, '\$1', '');
+    .circle(@start: 0, @end) when (@start < @end) {
+        @j: @start + 1; // 图片从1.png开始，比如 @end 为 45，则最后一张加载的为 45.png
+        @delta: @end - @start + 1;
+        @b: 1 / @delta * 100; // 小数 * 100 换算成百分数的分子；
+        @num: @j - @start;
+        @c: @b * @num; // 具体到各个 % 选择器的分子；
+        @x: round(@c, 2); // 使用 less round 函数小数点两位后取整数
+        @selector: e(
+            "@{x}%"
+        ); // 使用 less e 函数变为选择器,注意！！直接套用或者使用 percentage 函数无法识别
+
+        @{selector} {
+            background: url("@{prefix}@{j}@{suffix}") center center / contain no-repeat;
+        }
+        .circle((@start + 1), @end);
+    }
+    .circle(@start - 1, @end);
+}
+// @keyframes firework {
+//   .frameAnimMulti("assets/imgs/anim/$1.png", 2, 6)
+// }

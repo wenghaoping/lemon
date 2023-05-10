@@ -1,0 +1,206 @@
+@import '../global.less';
+
+/**
+ * title: 主题圆角
+ * type: themeBorderRadius
+ */
+each(@border-radius-theme-list, {
+    .border-r-@{key} {
+        border-radius: var(@value);
+    }
+})
+
+/**
+ * title: 主题阴影
+ * type: themeBorderRadius
+ */
+each(@shadow-theme-list, {
+    .shadow-@{key} {
+        box-shadow: var(@value);
+    }
+})
+
+/**
+ * title: 边距
+ * type: boxDistance
+ */
+@dis-list: range(0, 100);
+each(@dis-list, {
+    @v: unit(@value, px);
+    .pt@{value} {
+        padding-top: @v;
+    }
+    .pr@{value} {
+        padding-right: @v;
+    }
+    .pb@{value} {
+        padding-bottom: @v;
+    }
+    .pl@{value} {
+        padding-left: @v;
+    }
+    .padding-x-@{value} {
+        // &:extend(.pl@{value}, .pr@{value});
+        padding-left: @v;
+        padding-right: @v;
+    }
+    .padding-y-@{value} {
+        // &:extend(.pt@{value}, .pb@{value});
+        padding-top: @v;
+        padding-bottom: @v;
+    }
+    .padding@{value} {
+        padding: @v;
+    }
+
+    .mt@{value} {
+        margin-top: @v;
+    }
+    .mr@{value} {
+        margin-right: @v;
+    }
+    .mb@{value} {
+        margin-bottom: @v;
+    }
+    .ml@{value} {
+        margin-left: @v;
+    }
+    .margin-x-@{value} {
+        // &:extend(.ml@{value}, .mr@{value});
+        margin-left: @v;
+        margin-right: @v;
+    }
+    .margin-y-@{value} {
+        // &:extend(.mt@{value}, .mb@{value});
+        margin-top: @v;
+        margin-bottom: @v;
+    }
+    .margin@{value} {
+        margin: @v;
+    }
+})
+.margin-x-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/**
+ * title: 边框属性
+ * type: borderProperty
+ */
+@border-radius-list: range(2, 32);
+each(@border-radius-list, {
+    @v: unit(@value, px);
+    .border-r-@{value} {
+        border-radius: @v;
+    }
+    .border-r-lt-@{value} {
+        border-top-left-radius: @v;
+    }
+    .border-r-lb-@{value} {
+        border-bottom-left-radius: @v;
+    }
+    .border-r-rt-@{value} {
+        border-top-right-radius: @v;
+    }
+    .border-r-rb-@{value} {
+        border-bottom-right-radius: @v;
+    }
+})
+each(range(1, 4), {
+    @v: unit(@value, px);
+    .border-w-@{value} {
+        border-width: @v;
+    }
+    .border-w-t-@{value} {
+        border-top-width: @v;
+    }
+    .border-w-r-@{value} {
+        border-right-width: @v;
+    }
+    .border-w-b-@{value} {
+        border-bottom-width: @v;
+    }
+    .border-w-l-@{value} {
+        border-left-width: @v;
+    }
+})
+@border-style-list: solid, dashed, dotted;
+each(@border-style-list, {
+    .border-s-@{value} {
+        border-style: @value;
+    }
+    .border-s-t-@{value} {
+        border-top-style: @value;
+    }
+    .border-s-r-@{value} {
+        border-right-style: @value;
+    }
+    .border-s-b-@{value} {
+        border-bottom-style: @value;
+    }
+    .border-s-l-@{value} {
+        border-left-style: @value;
+    }
+})
+.border-collapse {
+    border-collapse: collapse;
+}
+
+/**
+ * title: 盒子类型
+ * type: borderSizing
+ */
+@box-sizing-list: border-box, content-box;
+each(@box-sizing-list, {
+    .@{value} {
+        box-sizing: @value;
+    }
+})
+
+
+/**
+ * title: 尺寸
+ * type: borderSize
+ */
+.w-0 {
+    width: 0;
+}
+.w-px {
+    width: 1px;
+}
+each(range(3, 5), {
+    .w-1\/@{value} {
+        width: calc(100% / @value);
+    }
+})
+.w-full {
+    width: 100%;
+}
+.min-w-0 {
+    min-width: 0;
+}
+.min-w-full {
+    min-width: 100%;
+}
+.h-0 {
+    height: 0;
+}
+.h-px {
+    height: 1px;
+}
+.h-full {
+    height: 100%;
+}
+.h-screen {
+    height: 100vh;
+}
+.min-h-full {
+    min-height: 100%;
+}
+.min-h-screen {
+    min-height: 100vh;
+}
+

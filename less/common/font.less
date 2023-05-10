@@ -1,0 +1,137 @@
+@import '../global.less';
+
+/**
+ * title: 主题字号
+ * type: themeFontSizes
+ */
+each(@font-size-theme-list, {
+    @fs: extract(@value, 1);
+    @lh: extract(@value, 2);
+    .fs-@{key} {
+        font-size: var(@fs);
+    }
+})
+/**
+ * title: 主题字号（带行高）
+ * type: themeFontSizesWithLineHeight
+ */
+each(@font-size-theme-list, {
+    @fs: extract(@value, 1);
+    @lh: extract(@value, 2);
+    .fslh-@{key} {
+        font-size: var(@fs);
+        line-height: var(@lh);
+    }
+})
+
+/**
+ * title: 主题行高
+ * type: themeLineHeight
+ */
+each(@line-height-theme-list, {
+    @lh: extract(@value, 1);
+    .lh-@{key} {
+        line-height: var(@lh);
+    }
+})
+
+/**
+ * title: 主题字重
+ * type: themeFontWeight
+ */
+each(@font-weight-theme-list, {
+    .fw-@{key} {
+        font-weight: var(@value);
+    }
+})
+
+/**
+ * title: 基本字号
+ * type: baseFontSizes
+ */
+each(@font-size-list, {
+    .fs@{value} {
+        font-size: unit(@value, px);
+    }
+})
+
+
+/**
+ * title: 基本行高
+ * type: baseLineHeight
+ */
+.line-height {
+    line-height: 1;
+}
+each(@line-height-list, {
+    .lh@{value} {
+        line-height: unit(@value, px);
+    }
+})
+
+// each(@font-size-line-list, {
+//     .fs-@{key} {
+//         font-size: unit(@fs, px);
+//         line-height: unit(@lh, px);
+//     }
+// })
+
+/**
+ * title: 基本字重
+ * type: baseFontWeight
+ */
+each(@font-weight-list, {
+    .fw-@{value} {
+        font-weight: @value;
+    }
+})
+.text-bold {
+    font-weight: bold;
+}
+
+
+/**
+ * title: 对其方式
+ * type: fontAlign
+ */
+@text-align-list: left, center, right, justify;
+each(@text-align-list, {
+    .text-@{value} {
+        text-align: @value;
+    }
+})
+@vertical-align-list: top, middle;
+each(@vertical-align-list, {
+    .vertical-@{value} {
+        vertical-align: @value;
+    }
+})
+
+
+/**
+ * title: 效果
+ * type: fontEffect
+ */
+@text-decoration-list: underline, line-through;
+each(@text-decoration-list, {
+    .@{value} {
+        text-decoration: @value;
+    }
+})
+.break-all {
+    word-break: break-all;
+}
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+.ellipsis {
+    .ellipsis;
+}
+each(range(2, 4), {
+    .line-ellipsis-@{value} {
+        .line-ellipsis(@value);
+    }
+})
+.italic {
+    font-style: italic;
+}

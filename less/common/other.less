@@ -1,0 +1,99 @@
+@import '../global.less';
+
+/**
+ * title: 列表样式
+ * type: listStyle
+ */
+@list-style-type-list: none, disc, decimal;
+each(@list-style-type-list, {
+    .list-type-@{value} {
+        list-style-type: @value!important;
+    }
+})
+@list-style-position-list: inside, outside;
+each(@list-style-position-list, {
+    .list-position-@{value} {
+        list-style-position: @value!important;
+    }
+})
+
+/**
+ * title: 样式
+ * type: backgroundStyle
+ */
+@bg-clip-list: {
+    border: border-box;
+    padding: padding-box;
+    content: content-box;
+    text: text;
+};
+each(@bg-clip-list, {
+    .bg-clip-@{key} {
+        background-clip: @value!important;
+    }
+})
+@bg-repeat-list: repeat, repeat-x, repeat-y, no-repeat;
+each(@bg-repeat-list, {
+    .bg-@{value} {
+        background-repeat: @value!important;
+    }
+})
+@bg-size-list: contain, cover;
+each(@bg-size-list, {
+    .bg-size-@{value} {
+        background-size: @value!important;
+    }
+})
+@bg-position-list: {
+    c: center;
+    t: top;
+    r: right;
+    b: bottom;
+    l: left;
+    lt: left top;
+    lb: left bottom;
+    rt: right top;
+    rb: right bottom;
+};
+each(@bg-position-list, {
+    .bg-position-@{key} {
+        background-position: @value!important;
+    }
+})
+
+
+/**
+ * title: 视觉效果
+ * type: effectStyle
+ */
+.visible {
+    visibility: visible;
+}
+.hidden {
+    visibility: hidden;
+}
+.opacity-0 {
+    opacity: 0;
+}
+.opacity-1 {
+    opacity: 1;
+}
+
+// 光标
+@cursor-list: pointer, move, text, not-allowed;
+each(@cursor-list, {
+    .cursor-@{value} {
+        cursor: @value;
+    }
+})
+.cursor {
+    cursor: pointer;
+}
+
+.pointer-event-none {
+    pointer-events: none;
+}
+
+.select-none {
+    user-select: none;
+}

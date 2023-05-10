@@ -1,0 +1,54 @@
+{
+  "name": "@minij/lemon",
+  "version": "0.0.1-beta.2",
+  "description": "帮助你写css的好帮手,让别人酸去吧!",
+  "main": "css/index.css",
+  "license": "ISC",
+  "scripts": {
+    "dev:doc": "vitepress dev docs --open",
+    "docs:serve": "vitepress serve docs",
+    "doc:preview": "vitepress preview docs --port 8088 --open",
+    "build:doc": "vitepress build docs && cp -r docs/.vitepress/dist dist",
+    "build:dev": "BUILD_ENV='production' vue-cli-service build --mode development",
+    "build:deploy": "npm run build:doc && npm run build:style",
+    "build:style": "rm -rf css && gulp build --gulpfile build/build-style.js",
+    "publish:online": "npm run build:deploy && sudo npm publish --access public"
+  },
+  "devDependencies": {
+    "@types/deasync": "^0.1.2",
+    "@types/less": "^3.0.3",
+    "@types/markdown-it-container": "^2.0.4",
+    "@types/node": "^16.11.7",
+    "@vitesite/theme-normal": "^0.0.1-beta.6",
+    "autoprefixer": "^10.4.0",
+    "deasync": "^0.1.24",
+    "eslint": "^7.13.0",
+    "eslint-plugin-markdown": "^1.0.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^5.0.5",
+    "gulp-less": "^5.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "less": "^4.1.2",
+    "less-loader": "^4.1.0",
+    "markdown-it-container": "^3.0.0",
+    "postcss": "^8.3.11",
+    "postcss-less": "^5.0.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4",
+    "vitepress": "^0.20.1"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "global": "^4.4.0"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [],
+  "author": "wenghaoping",
+  "repository": {
+    "type": "git",
+    "url": "A good helper to help you write css, let others be sour!"
+  }
+}

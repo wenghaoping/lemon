@@ -1,0 +1,8 @@
+:root {
+    --primary: #3947E6;
+    --primary-press: #1b2bda;
+    --primary-hover: #6974ec;
+    --primary-light-hover:#babff6;
+    --primary-light-select:#e8eafc;
+    --primary-bg: #e1e4f7; 
+}

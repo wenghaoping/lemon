@@ -1,0 +1,16 @@
+:root {
+    --primary: #4552E6;
+    --primary-text: var(--primary);
+    --primary-press: #3825B8;
+    --primary-disable: #8F97F0;
+    --primary-selected: #ecedfc;
+    --text-selected: var(--primary);
+
+    --text-anti: var(--white);
+}
+
+:root {
+    --font-highlight: var(--white);
+    --primary-highlight: var(--primary);
+    --primary-disable-select-color: #7079dd;
+}

@@ -1,0 +1,17 @@
+:root {
+    --primary: #FFC400;
+    --primary-text: #F0A800;
+    --primary-press: #F1B900;
+    --primary-disable: #FFE899;
+    --primary-selected: #FFF9E6;
+    --text-selected: var(--text-title);
+
+    --text-anti: var(--text-title);
+}
+
+
+:root {
+    --font-highlight: var(--text-title);
+    --primary-highlight: var(--text-title);
+    --primary-disable-select-color: #e0bf75;
+}

@@ -1,0 +1,162 @@
+@import '../global.less';
+
+/**
+ * title: 显示类型
+ * type: displayType
+ */
+@display-list: block, inline, inline-block, flex, inline-flex, hidden, table, table-cell;
+each(@display-list, {
+    .@{value} {
+        display: @value;
+    }
+})
+
+/**
+ * title: 浮动
+ * type: layoutFloat
+ */
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clear-fix {
+    .clear-fix();
+}
+@clear-list: left, right, both;
+each(@clear-list, {
+    .clear-@{value} {
+        clear: @value;
+    }
+})
+
+
+/**
+ * title: 溢出滚动行为
+ * type: overflow
+ */
+@overflow-list: hidden, visible, scroll, auto;
+each(@overflow-list, {
+    .overflow-@{value} {
+        overflow: @value;
+    }
+    .overflow-x-@{value} {
+        overflow-x: @value;
+    }
+    .overflow-y-@{value} {
+        overflow-y: @value;
+    }
+})
+.overscroll-contain {
+    overscroll-behavior: contain;
+}
+.overscroll-x-contain {
+    overscroll-behavior-x: contain;
+}
+.overscroll-y-contain {
+    overscroll-behavior-y: contain;
+}
+.scrolling-touch {
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/**
+ * title: flex
+ * type: flex
+ */
+@flex-direction-list: {
+    row: row;
+    row-reverse: row-reverse;
+    col: column;
+    col-reverse: column-reverse;
+};
+each(@flex-direction-list, {
+    .flex-@{key} {
+        flex-direction: @value;
+    }
+})
+@flex-wrap-list: wrap, wrap-reverse, nowrap;
+each(@flex-wrap-list, {
+    .flex-@{value} {
+        flex-wrap: @value;
+    }
+})
+.flex1 {
+    flex: 1 1;
+}
+@flex-list: 0, 1, 2, 3, 4;
+each(@flex-list, {
+    .flex-grow-@{value} {
+        flex-grow: @value;
+    }
+    .flex-shrink-@{value} {
+        flex-shrink: @value;
+    }
+})
+@flex-justify-list: {
+    start: flex-start;
+    center: center;
+    end: flex-end;
+    between: space-between;
+    around: space-around;
+};
+each(@flex-justify-list, {
+    .flex-justify-@{key} {
+        justify-content: @value;
+    }
+})
+@flex-align-list: {
+    start: flex-start;
+    center: center;
+    end: flex-end;
+    baseline: baseline;
+    stretch: stretch;
+};
+each(@flex-align-list, {
+    .flex-align-@{key} {
+        align-items: @value;
+    }
+})
+@flex-align-content-list: {
+    start: flex-start;
+    center: center;
+    end: flex-end;
+    between: space-between;
+    around: space-around;
+    evenly: space-evenly;
+    stretch: stretch;
+}
+each(@flex-align-content-list, {
+    .align-content-@{key} {
+        align-content: @value;
+    }
+})
+@flex-align-self-list: {
+    auto: auto;
+    start: flex-start;
+    center: center;
+    end: flex-end;
+    baseline: baseline;
+    stretch: stretch;
+};
+each(@flex-align-self-list, {
+    .align-self-@{key} {
+        align-self: @value;
+    }
+})
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**
+ * title: 表格
+ * type: table
+ */
+.table-fixed {
+    table-layout: fixed;
+}
