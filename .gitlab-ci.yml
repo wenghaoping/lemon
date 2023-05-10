@@ -1,0 +1,38 @@
+stages:
+  - install-build-job
+  - deploy_pages
+# 部署所需要的环境
+image: node:15.14.0
+# 缓存（默认情况下，每个pipelines和jobs中可以共享一切，从GitLab 9.0开始）
+cache: {}
+# 构建工作并且编译
+install-build-job:
+    # stages中的一个job
+  stage: install-build-job
+  # 只有在dev和master分支才触发CICD
+  only:
+    - main
+  # 命令操作
+  script:
+    - npm install
+    - npm run build
+  # 在执行命令后执行的操作
+  after_script:
+    - rm -r node_modules/*
+  # 制品，即build之后的生成物
+  artifacts:
+    paths:
+      - dist/*
+#构建工作-部署到gitlab pages
+pages:
+  stage: deploy_pages
+  tags:
+      - platform-tag
+  only:
+    - master
+  script:
+    - mv public public-vue # GitLab Pages 的钩子设置在 public 文件夹
+    - mv dist public # 重命名 dist 文件夹 (npm run build 之后的输出位置)
+  artifacts:
+    paths:
+      - public # artifact path 一定要在 /public , 这样 GitLab Pages 才能获取
