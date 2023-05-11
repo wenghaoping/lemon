@@ -12,7 +12,10 @@
     "build:dev": "BUILD_ENV='production' vue-cli-service build --mode development",
     "build:deploy": "npm run build:doc && npm run build:style",
     "build:style": "rm -rf css && gulp build --gulpfile build/build-style.js",
-    "publish:online": "npm run build:deploy && sudo npm publish --access public"
+    "publish:online": "npm run build:deploy && sudo npm publish --access public",
+    "gitlabpush:remote": "git remote add origin https://gitlab.com/ji_app/lemon.git",
+    "gitpush:remote": "git remote add origingit git@github.com:wenghaoping/lemon.git",
+    "gitpush": "git push -u origin main && git push -u origingit main"
   },
   "devDependencies": {
     "@types/deasync": "^0.1.2",
