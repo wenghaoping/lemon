@@ -1,14 +1,20 @@
 ## 主题变量
-<co-box-variables />
 
+<co-box-variables />
 
 ## 尺寸类
 
-:::css-api path=/less/common/box.less & block=themeBorderRadius
-:::
+### 主题圆角(border-radius)
 
 :::css-api path=/less/common/box.less & block=themeBorderRadius
 :::
+
+### 主题阴影(box-shadow)
+
+:::css-api path=/less/common/box.less & block=themeBoxShadow
+:::
+
+### 边距(margin, padding)
 
 <div>
 <co-class-api
@@ -19,6 +25,15 @@
             property: [
                 {
                     prop: 'padding-left',
+                    value: '0px'
+                }
+            ]
+        },
+        {
+            class: 'ml0',
+            property: [
+                {
+                    prop: 'margin-left',
                     value: '0px'
                 }
             ]
@@ -91,6 +106,8 @@
         }
     ]" />
 </div>
+
+### 边框(border 组合)
 
 <div>
 <co-class-api
@@ -201,8 +218,143 @@
 :::css-api path=/less/common/box.less & block=borderSizing
 :::
 
-:::css-api path=/less/common/box.less & block=borderSize
-:::
+### 长宽简写(width, height)
+
+<!-- :::css-api path=/less/common/box.less & block=borderSize
+::: -->
+
+<div>
+<co-class-api
+    title="长宽简写"
+    :tableData="[
+        {
+            class: 'w-[0-50]',
+            property: [
+                {
+                    prop: 'width',
+                    value: '[0-50]px'
+                }
+            ]
+        },
+        {
+            class: 'w-1/3',
+            property: [
+                {
+                    prop: 'width',
+                    value: 'calc(100% / 3)'
+                }
+            ]
+        },
+        {
+            class: 'w-1/4',
+            property: [
+                {
+                    prop: 'width',
+                    value: 'calc(100% / 4)'
+                }
+            ]
+        },
+        {
+            class: 'w-1/5',
+            property: [
+                {
+                    prop: 'width',
+                    value: 'calc(100% / 5)'
+                }
+            ]
+        },
+        {
+            class: 'w-full',
+            property: [
+                {
+                    prop: 'width',
+                    value: '100%'
+                }
+            ]
+        },
+        {
+            class: 'w-screen',
+            property: [
+                {
+                    prop: 'width',
+                    value: '100vw'
+                }
+            ]
+        },
+        {
+            class: 'min-w-0',
+            property: [
+                {
+                    prop: 'min-width',
+                    value: '0'
+                }
+            ]
+        },
+        {
+            class: 'min-w-full',
+            property: [
+                {
+                    prop: 'min-width',
+                    value: '100%'
+                }
+            ]
+        },
+        {
+            class: 'min-w-screen',
+            property: [
+                {
+                    prop: 'min-width',
+                    value: '100vw'
+                }
+            ]
+        },
+        {
+            class: 'h-[0-50]',
+            property: [
+                {
+                    prop: 'height',
+                    value: '[0-50]px;'
+                }
+            ]
+        },
+        {
+            class: 'h-full',
+            property: [
+                {
+                    prop: 'height',
+                    value: '100%'
+                }
+            ]
+        },
+        {
+            class: 'h-screen',
+            property: [
+                {
+                    prop: 'height',
+                    value: '100vh'
+                }
+            ]
+        },
+        {
+            class: 'min-h-full',
+            property: [
+                {
+                    prop: 'min-height',
+                    value: '100%'
+                }
+            ]
+        },
+        {
+            class: 'min-h-screen',
+            property: [
+                {
+                    prop: 'min-height',
+                    value: '100vh'
+                }
+            ]
+        },
+    ]" />
+</div>
 
 <script setup>
 import CoBoxVariables from './components/box-variables.vue'

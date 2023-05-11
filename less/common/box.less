@@ -12,7 +12,7 @@ each(@border-radius-theme-list, {
 
 /**
  * title: 主题阴影
- * type: themeBorderRadius
+ * type: themeBoxShadow
  */
 each(@shadow-theme-list, {
     .shadow-@{key} {
@@ -21,7 +21,7 @@ each(@shadow-theme-list, {
 })
 
 /**
- * title: 边距
+ * title: 边距(margin, padding)
  * type: boxDistance
  */
 @dis-list: range(0, 100);
@@ -162,15 +162,17 @@ each(@box-sizing-list, {
 
 
 /**
- * title: 尺寸
+ * title: 长宽高
  * type: borderSize
  */
 .w-0 {
     width: 0;
 }
-.w-px {
-    width: 1px;
-}
+each(@width-height-num-list, {
+    .w-@{value} {
+        width: unit(@value, px);
+    }
+})
 each(range(3, 5), {
     .w-1\/@{value} {
         width: calc(100% / @value);
@@ -179,18 +181,26 @@ each(range(3, 5), {
 .w-full {
     width: 100%;
 }
+.w-screen {
+    width: 100vw;
+}
 .min-w-0 {
     min-width: 0;
 }
 .min-w-full {
     min-width: 100%;
 }
+.min-w-screen {
+    min-width: 100vw;
+}
 .h-0 {
     height: 0;
 }
-.h-px {
-    height: 1px;
-}
+each(@width-height-num-list, {
+    .h-@{value} {
+        height: unit(@value, px);
+    }
+})
 .h-full {
     height: 100%;
 }

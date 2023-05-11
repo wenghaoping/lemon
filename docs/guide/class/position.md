@@ -1,7 +1,8 @@
-## 类
+## 定位类型(position)
+
 <div>
 <co-class-api
-    title="定位距离"
+    title="定位类型"
     :tableData="[
         {
             class: 'static',
@@ -51,6 +52,7 @@
     ]" />
 </div>
 
+## 定位距离(top, bottom, left, bottom)
 
 <div>
 <co-class-api
@@ -86,9 +88,12 @@
     ]" />
 </div>
 
+## 定位层级 (z-index)
 
 :::css-api path=/less/common/position.less & block=zIndex
 :::
+
+## 特殊定位合集 (绝对居中)
 
 :::css-api path=/less/common/position.less & block=positionSpecial
 :::

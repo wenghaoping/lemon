@@ -1,14 +1,18 @@
-## 类
+## 显示类型 (display)
 
 :::css-api path=/less/common/layout.less & block=displayType
 :::
 
+## flex 布局 (flex)
+
 :::css-api path=/less/common/layout.less & block=flex
 :::
 
+## 浮动 (float)
+
 <div>
 <co-class-api
-    :title="浮动"
+    title="浮动"
     :tableData="[
         {
             class: 'fl',
@@ -67,8 +71,12 @@
     ]" />
 </div>
 
+## 溢出滚动行为 (overflow)
+
 :::css-api path=/less/common/layout.less & block=overflow
 :::
+
+## 表格 (table-layout)
 
 :::css-api path=/less/common/layout.less & block=table
 :::

@@ -14,9 +14,21 @@
 yarn add @minij/lemon
 ```
 
+## npm 地址
+
+```js
+https://www.npmjs.com/package/@minij/lemon?activeTab=readme
+```
+
+## git 地址
+
+```js
+https://github.com/wenghaoping/lemon
+```
+
 ## 使用
 
-### 全量引入功能好
+### 全量引入功能好(推荐)
 
 ```js
 import "@minij/lemon"; // 引入全量工具类

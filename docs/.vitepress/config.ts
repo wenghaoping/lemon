@@ -1,12 +1,13 @@
 import * as path from "path";
-import { defineConfig } from "vitepress";
-import { defineThemeConfig, extendConfig } from "@vitesite/theme-normal";
+// import { defineConfig } from "vitepress";
+import { extendConfig } from "@vitesite/theme-normal";
 import { version } from "../../package.json";
 import { mdCssDocPlugin } from "./utils/css";
 
 const resolve = (...p) => path.resolve(__dirname, "../..", ...p);
 
-export const themeConfig = defineThemeConfig({
+export const themeConfig = {
+    sidebarDepth: 4,
     nav: [
         {
             text: "指南",
@@ -34,10 +35,11 @@ export const themeConfig = defineThemeConfig({
             {
                 text: "快速上手",
                 link: "/guide/",
+                collapsed: true,
             },
             {
                 text: "概念",
-                sidebarDepth: 2,
+                collapsed: true,
                 children: [
                     {
                         text: "工具类",
@@ -88,11 +90,11 @@ export const themeConfig = defineThemeConfig({
             },
         ],
     },
-});
+};
 export default extendConfig({
     themeConfig,
     title: "lemon",
-    base: "/",
+    base: "/lemon-docs/",
     vite: {
         resolve: {
             alias: [

@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper.21dcd24c.js";import{o as t,b as a}from"./framework.0718b91c.js";const l='{"title":"","description":"","frontmatter":{},"relativePath":"guide/changelog/index.md","lastUpdated":1683709375189}',o={};function r(n,c,s,i,d,p){return t(),a("div")}var m=e(o,[["render",r]]);export{l as __pageData,m as default};

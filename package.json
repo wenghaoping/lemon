@@ -5,11 +5,10 @@
   "main": "css/index.css",
   "license": "ISC",
   "scripts": {
-    "dev:doc": "vitepress dev docs --open",
+    "dev": "vitepress dev docs --open --mode development",
     "docs:serve": "vitepress serve docs",
     "doc:preview": "vitepress preview docs --port 8088 --open",
-    "build:doc": "vitepress build docs && cp -r docs/.vitepress/dist dist",
-    "build:dev": "BUILD_ENV='production' vue-cli-service build --mode development",
+    "build:doc": "rm -rf dist && vitepress build docs && cp -r docs/.vitepress/dist dist && rm -rf docs/.vitepress/dist",
     "build:deploy": "npm run build:doc && npm run build:style",
     "build:style": "rm -rf css && gulp build --gulpfile build/build-style.js",
     "publish:online": "npm run build:deploy && sudo npm publish --access public",
