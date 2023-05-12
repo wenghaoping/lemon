@@ -39,11 +39,11 @@
             ]
         },
         {
-            class: '[p|m][t|r|b|l][0-100]',
+            class: '[ p | m ][ t |r | b | l ] [0-100]',
             property: [
                 {
-                    prop: '[padding|margin]-[top|right|bottom|left]',
-                    value: '[0-100]px'
+                    prop: '[ padding | margin ]-[ top | right | bottom | left ]',
+                    value: '0-100px'
                 }
             ]
         },
@@ -61,15 +61,15 @@
             ]
         },
         {
-            class: '[padding|margin]-[x|y]-[0-100]',
+            class: '[ padding | margin ]-[ x | y ]-[ 0-100 ]',
             property: [
                 {
-                    prop: '[padding|margin]-[right|bottom]',
-                    value: '[0-100]px'
+                    prop: '[ padding | margin ]-[ right | bottom ]',
+                    value: '0-100px'
                 },
                 {
-                    prop: '[padding|margin]-[left|top]',
-                    value: '[0-100]px'
+                    prop: '[ padding | margin ]-[ left | top ]',
+                    value: '0-100px'
                 }
             ]
         },
@@ -83,11 +83,11 @@
             ]
         },
         {
-            class: '[padding|margin][0-100]',
+            class: '[ padding | margin ][ 0 - 100 ]',
             property: [
                 {
-                    prop: '[padding|margin]',
-                    value: '[0-100]px'
+                    prop: '[ padding | margin ]',
+                    value: '0-100px'
                 }
             ]
         },
@@ -132,19 +132,10 @@
             ]
         },
         {
-            class: 'border-r-lt-2',
+            class: 'border-r-[tl|bl|tr|br]-[2-32]',
             property: [
                 {
-                    prop: 'border-top-left-radius',
-                    value: '2px'
-                }
-            ]
-        },
-        {
-            class: 'border-r-[lt|lb|rt|rb]-[2-32]',
-            property: [
-                {
-                    prop: 'border-[direction]-radius',
+                    prop: 'border-[ top | right | bottom | left ]-[ top | right | bottom | left ]-radius',
                     value: '[2-32]px'
                 }
             ]
@@ -313,7 +304,7 @@
             property: [
                 {
                     prop: 'height',
-                    value: '[0-50]px;'
+                    value: '[0-50]px'
                 }
             ]
         },

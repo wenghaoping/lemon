@@ -59,28 +59,37 @@
     title="定位距离"
     :tableData="[
         {
-            class: '[t|r|b|l]-0',
+            class: '[ t | r | b | l ]-0',
             property: [
                 {
-                    prop: '[top|right|bottom|left]',
+                    prop: 'top | right | bottom | left',
                     value: '0'
                 }
             ]
         },
         {
-            class: '[t|r|b|l]-auto',
+            class: '[ t | r | b | l ]-[1-50]',
             property: [
                 {
-                    prop: '[top|right|bottom|left]',
+                    prop: 'top | right | bottom | left',
+                    value: '1-50px'
+                }
+            ]
+        },
+        {
+            class: '[ t | r | b | l ]-auto',
+            property: [
+                {
+                    prop: 'top | right | bottom | left',
                     value: 'auto'
                 }
             ]
         },
         {
-            class: '[lt|lb|rt|rb|lr|tb]-0',
+            class: '[ lt | lb | rt | rb | lr | tb ]-0',
             property: [
                 {
-                    prop: '[direction]',
+                    prop: 'direction',
                     value: '0'
                 }
             ]

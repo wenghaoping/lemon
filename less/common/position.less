@@ -26,10 +26,15 @@ each(@direction-list, {
     @name-auto: @{key}-auto;
     .@{name-0} {
         @{value}: 0!important;
-    }
+    };
     .@{name-auto} {
         @{value}: auto!important;
-    }
+    };
+    each(@position-num-list, .(@numVal){
+        .@{key}@{numVal} {
+            @{value}: unit(@numVal, px);
+        }
+    })
 })
 
 .lt-0 {
@@ -62,15 +67,15 @@ each(@direction-list, {
  * title: 定位层级
  * type: zIndex
  */
+ .z-index-1 {
+    z-index: 1;
+}
 @z-index-list: range(10, 90, 10);
 each(@z-index-list, {
     .z-index-@{value} {
         z-index: @value;
     }
 })
-.z-index-1 {
-    z-index: 1;
-}
 .z-index-99 {
     z-index: 99;
 }
