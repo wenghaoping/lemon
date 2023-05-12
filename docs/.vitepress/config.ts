@@ -25,6 +25,10 @@ export const themeConfig = {
             text: version,
             link: "/",
         },
+        {
+            text: "Source",
+            link: "https://github.com/wenghaoping/lemon",
+        },
     ],
     sidebar: {
         "/guide/": [

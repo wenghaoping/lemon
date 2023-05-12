@@ -169,12 +169,12 @@ each(@box-sizing-list, {
     width: 0;
 }
 each(@width-height-num-list, {
-    .w-@{value} {
+    .w@{value} {
         width: unit(@value, px);
     }
 })
 each(range(3, 5), {
-    .w-1\/@{value} {
+    .w-1-@{value} {
         width: calc(100% / @value);
     }
 })
@@ -197,7 +197,7 @@ each(range(3, 5), {
     height: 0;
 }
 each(@width-height-num-list, {
-    .h-@{value} {
+    .h@{value} {
         height: unit(@value, px);
     }
 })

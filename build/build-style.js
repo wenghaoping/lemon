@@ -19,6 +19,6 @@ gulp.task('build', () => {
         // .pipe(concat(resolve('less/global.less')))
         .pipe(less())
         // 压缩文件
-        .pipe(minifyCSS())
+        // .pipe(minifyCSS())
         .pipe(gulp.dest(resolve('css')));
 });

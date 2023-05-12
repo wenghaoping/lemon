@@ -228,7 +228,7 @@
     title="长宽简写"
     :tableData="[
         {
-            class: 'w-[0-50]',
+            class: 'w[0-50]',
             property: [
                 {
                     prop: 'width',
@@ -237,7 +237,7 @@
             ]
         },
         {
-            class: 'w-1/3',
+            class: 'w-1-3',
             property: [
                 {
                     prop: 'width',
@@ -246,7 +246,7 @@
             ]
         },
         {
-            class: 'w-1/4',
+            class: 'w-1-4',
             property: [
                 {
                     prop: 'width',
@@ -255,7 +255,7 @@
             ]
         },
         {
-            class: 'w-1/5',
+            class: 'w-1-5',
             property: [
                 {
                     prop: 'width',
@@ -309,7 +309,7 @@
             ]
         },
         {
-            class: 'h-[0-50]',
+            class: 'h[0-50]',
             property: [
                 {
                     prop: 'height',
