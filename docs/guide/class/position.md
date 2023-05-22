@@ -89,7 +89,7 @@
             class: '[ lt | lb | rt | rb | lr | tb ]-0',
             property: [
                 {
-                    prop: 'direction',
+                    prop: 'top | right | bottom | left',
                     value: '0'
                 }
             ]
