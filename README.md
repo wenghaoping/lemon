@@ -29,7 +29,7 @@ A good helper to help you write css, let others be sour!
 通过 yarn 安装
 
 ```bash
-yarn add @minij/lemon
+yarn add @minij/lemon -S
 ```
 
 ## 使用
