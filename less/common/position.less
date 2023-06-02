@@ -24,9 +24,6 @@ each(@position-list, {
 each(@direction-list, {
     @name-0: @{key}-0;
     @name-auto: @{key}-auto;
-    .@{name-0} {
-        @{value}: 0!important;
-    };
     .@{name-auto} {
         @{value}: auto!important;
     };
@@ -37,24 +34,24 @@ each(@direction-list, {
     })
 })
 
-.lt-0 {
-    &:extend(.l-0, .t-0);
-}
-.lb-0 {
-    &:extend(.l-0, .b-0);
-}
-.rt-0 {
-    &:extend(.r-0, .t-0);
-}
-.rb-0 {
-    &:extend(.r-0, .b-0);
-}
-.lr-0 {
-    &:extend(.l-0, .r-0);
-}
-.tb {
-    &:extend(.t-0, .b-0);
-}
+// .lt-0 {
+//     &:extend(.l-0, .t-0);
+// }
+// .lb-0 {
+//     &:extend(.l-0, .b-0);
+// }
+// .rt-0 {
+//     &:extend(.r-0, .t-0);
+// }
+// .rb-0 {
+//     &:extend(.r-0, .b-0);
+// }
+// .lr-0 {
+//     &:extend(.l-0, .r-0);
+// }
+// .tb {
+//     &:extend(.t-0, .b-0);
+// }
 .cover-0 {
     left: 0;
     right: 0;

@@ -58,21 +58,21 @@
 <co-class-api
     title="定位距离"
     :tableData="[
+        // {
+        //     class: '[ t | r | b | l ]-0',
+        //     property: [
+        //         {
+        //             prop: 'top | right | bottom | left',
+        //             value: '0'
+        //         }
+        //     ]
+        // },
         {
-            class: '[ t | r | b | l ]-0',
+            class: '[ t | r | b | l ][0-50]',
             property: [
                 {
                     prop: 'top | right | bottom | left',
-                    value: '0'
-                }
-            ]
-        },
-        {
-            class: '[ t | r | b | l ][1-50]',
-            property: [
-                {
-                    prop: 'top | right | bottom | left',
-                    value: '1-50px'
+                    value: '0-50px'
                 }
             ]
         },
@@ -85,15 +85,15 @@
                 }
             ]
         },
-        {
-            class: '[ lt | lb | rt | rb | lr | tb ]-0',
-            property: [
-                {
-                    prop: 'top | right | bottom | left',
-                    value: '0'
-                }
-            ]
-        }
+        // {
+        //     class: '[ lt | lb | rt | rb | lr | tb ]-0',
+        //     property: [
+        //         {
+        //             prop: 'top | right | bottom | left',
+        //             value: '0'
+        //         }
+        //     ]
+        // }
     ]" />
 </div>
 

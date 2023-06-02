@@ -12,7 +12,7 @@
     "build:deploy": "npm run build:doc && npm run build:style",
     "build:style": "rm -rf css && gulp build --gulpfile build/build-style.js",
     "publish:online": "npm run build:style && sudo npm publish --access public",
-    "gitlabpush:remote": "git remote add origin https://gitlab.com/ji_app/lemon.git",
+    "gitlabpush:remote": "git remote add origin https://gitlab.com/minij/web-app/lemon.git",
     "gitpush:remote": "git remote add origingit git@github.com:wenghaoping/lemon.git",
     "gitpush": "git push -u origin main && git push -u origingit main"
   },
