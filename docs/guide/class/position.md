@@ -68,7 +68,7 @@
             ]
         },
         {
-            class: '[ t | r | b | l ]-[1-50]',
+            class: '[ t | r | b | l ][1-50]',
             property: [
                 {
                     prop: 'top | right | bottom | left',
