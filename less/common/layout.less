@@ -4,7 +4,7 @@
  * title: 显示类型
  * type: displayType
  */
-@display-list: block, inline, inline-block, flex, inline-flex, hidden, table, table-cell;
+@display-list: block, none, inline, inline-block, flex, inline-flex, hidden, table, table-cell;
 each(@display-list, {
     .@{value} {
         display: @value;
@@ -151,6 +151,12 @@ each(@flex-align-self-list, {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+// 左右两边靠边,垂直居中
+.flex-between-center {
+    display: flex;
+    justify-content : space-between;
+    align-items : center;
 }
 
 /**

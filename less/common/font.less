@@ -11,18 +11,6 @@ each(@font-size-theme-list, {
         font-size: var(@fs);
     }
 })
-/**
- * title: 主题字号（带行高）
- * type: themeFontSizesWithLineHeight
- */
-each(@font-size-theme-list, {
-    @fs: extract(@value, 1);
-    @lh: extract(@value, 2);
-    .fslh-@{key} {
-        font-size: var(@fs);
-        line-height: var(@lh);
-    }
-})
 
 /**
  * title: 主题行高
@@ -113,8 +101,12 @@ each(@text-decoration-list, {
 .break-all {
     word-break: break-all;
 }
-.whitespace-nowrap {
+.white-space-nowrap {
     white-space: nowrap;
+}
+.white-space-pre-wrap {
+    // 保留空白符序列，但是正常地进行换行。
+    white-space: pre-wrap
 }
 .ellipsis {
     .ellipsis;

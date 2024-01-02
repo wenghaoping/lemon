@@ -1,25 +1,16 @@
 <style lang="less">
-.class {
-}
+.class {}
 </style>
 
 <template>
-    <div
-        v-for="info in boxVariables"
-        :key="info.title"
-        class="mb24">
+    <div v-for="info in boxVariables" :key="info.title" class="mb24">
         <div class="fs18 text-bold">{{ info.title }}</div>
         <div>
-            <div
-                v-for="item in info.items"
-                :key="item.key"
-                class="margin-y-12">
-                <div
-                    class="inline-block padding-x-24 padding-y-16"
-                    :style="{
-                        border: '1px solid var(--stroke)',
-                        [info.property]: `var(${item.key})`
-                    }">{{ item.key }}: {{ item.value }}</div>
+            <div v-for="item in info.items" :key="item.key" class="margin-y-12">
+                <div class="inline-block padding-x-24 padding-y-16" :style="{
+                    border: '1px solid var(--stroke)',
+                    [info.property]: `var(${item.key})`
+                }">{{ item.key }}: {{ item.value }}</div>
             </div>
         </div>
     </div>
@@ -32,24 +23,28 @@ const boxVariables = [
         property: 'border-radius',
         items: [
             {
+                key: '--border-radius-circle',
+                value: '50%',
+            },
+            {
                 key: '--border-radius-half',
                 value: '100vh',
             },
             {
                 key: '--border-radius-large',
-                value: '12px',
+                value: '36px',
             },
             {
                 key: '--border-radius-medium',
-                value: '8px',
+                value: '24px',
             },
             {
                 key: '--border-radius-small',
-                value: '6px',
+                value: '16px',
             },
             {
                 key: '--border-radius-mini',
-                value: '4px',
+                value: '12px',
             },
         ]
     },

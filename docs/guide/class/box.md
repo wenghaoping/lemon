@@ -273,6 +273,15 @@
             ]
         },
         {
+            class: 'w-auto',
+            property: [
+                {
+                    prop: 'width',
+                    value: 'auto'
+                }
+            ]
+        },
+        {
             class: 'min-w-0',
             property: [
                 {
@@ -323,6 +332,15 @@
                 {
                     prop: 'height',
                     value: '100vh'
+                }
+            ]
+        },
+        {
+            class: 'h-auto',
+            property: [
+                {
+                    prop: 'height',
+                    value: 'auto'
                 }
             ]
         },

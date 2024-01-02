@@ -1,6 +1,6 @@
 {
   "name": "@minij/lemon",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "帮助你写css的好帮手,让别人酸去吧!",
   "main": "css/index.css",
   "license": "ISC",

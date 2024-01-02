@@ -56,3 +56,14 @@ import "@minij/lemon/css/position.css";
 import "@minij/lemon/css/box.css";
 import "@minij/lemon/css/other.css";
 ```
+
+### 更新历史记录
+
+##### 0.0.3
+
+-   新增简易 css
+
+##### 0.0.2
+
+-   新增宽高数值
+-   新增定位数值

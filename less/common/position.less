@@ -64,7 +64,7 @@ each(@direction-list, {
  * title: 定位层级
  * type: zIndex
  */
- .z-index-1 {
+.z-index-1 {
     z-index: 1;
 }
 @z-index-list: range(10, 90, 10);
@@ -84,6 +84,22 @@ each(@z-index-list, {
 .absolute-center {
     .absolute(@top: 50%, @left: 50%);
     transform: translate(-50%, -50%);
+}
+// 水平居中
+.absolute-left-center {
+    .absolute(0, @left: 50%);
+    transform: translate(-50%, 0);
+}
+// 竖向居中
+.absolute-top-center {
+    .absolute(@top: 50%, 0);
+    transform: translate(0, -50%);
+}
+.fiexd-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 .cover {
     position: fixed;

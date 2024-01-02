@@ -13,11 +13,6 @@ import CoFontVariables from './components/font-variables.vue'
 :::css-api path=/less/common/font.less & block=themeFontSizes
 :::
 
-### 主题字号 (font-size + line-height)
-
-:::css-api path=/less/common/font.less & block=themeFontSizesWithLineHeight
-:::
-
 ### 主题行高 (line-height)
 
 :::css-api path=/less/common/font.less & block=themeLineHeight
@@ -60,7 +55,7 @@ import CoFontVariables from './components/font-variables.vue'
             ]
         },
         {
-            class: 'fs[14-100]',
+            class: 'lh[14-100]',
             property: [
                 {
                     prop: 'line-height',
